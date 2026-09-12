@@ -49,5 +49,4 @@ public class Homework1 {
 }
 ```
 
-#### 실행 결과
-![Homework1 실행 결과](./image/Homework1.png)
+![](./image/Homework1.png)
