@@ -48,4 +48,4 @@ public class Homework1 {
 		}
 	}
 }
-https://github.com/hsin1256-bot/OOP2026/blob/main/image/Homework1.png
+image/Homework1.png
