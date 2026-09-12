@@ -1,7 +1,6 @@
 ### Homework1
-``` java
 
-
+```java
 public class Homework1 {
 
 	public static void main(String[] args) {
@@ -48,4 +47,7 @@ public class Homework1 {
 		}
 	}
 }
-image/Homework1.png
+```
+
+#### 실행 결과
+![Homework1 실행 결과](./image/Homework1.png)
