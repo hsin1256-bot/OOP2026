@@ -50,3 +50,23 @@ public class Homework1 {
 ```
 
 ![](./image/Homework1.png)
+
+```java
+public class HomeWork1 {
+    public static void main(String[] args) {
+        int i = 1; 
+        int j = 1; 
+        int k;
+
+        System.out.print(i + "," + j);
+
+        for(int count = 3; count <= 20; count++) {
+            k = i + j;                 
+            System.out.print("," + k); 
+
+            i = j; 
+            j = k; 
+        }
+    }
+}
+ ```
