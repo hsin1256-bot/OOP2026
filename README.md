@@ -70,3 +70,4 @@ public class HomeWork1 {
     }
 }
  ```
+![](./image/Homework1-1.png)
