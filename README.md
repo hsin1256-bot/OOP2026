@@ -71,3 +71,25 @@ public class HomeWork1 {
 }
  ```
 ![](./image/homework1-1.png)
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        int i;
+        int j = 0;
+        int k = 1;
+        List<Integer> list = new ArrayList<>(); 
+        
+ 
+        for(i = 0; i <= 21; i++) {
+            System.out.print(k + " "); 	  
+            list.add(k);
+            int temp = k;
+            k = j + k;
+            j = temp;
+        }
+        System.out.println();
+
+        }
+}
+
