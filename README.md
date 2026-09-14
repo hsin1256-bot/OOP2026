@@ -78,7 +78,6 @@ public class HelloWorld {
         int i;
         int j = 0;
         int k = 1;
-        List<Integer> list = new ArrayList<>(); 
         
  
         for(i = 0; i <= 21; i++) {
