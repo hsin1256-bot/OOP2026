@@ -1,0 +1,56 @@
+public class Homework1_3 {
+    public static void main(String[] args) {
+
+        int array_count, max_value, bin_size, display_scale, hist_size;
+
+        // 인자가 4개가 아니면 종료
+        if (args.length != 4) {
+            System.out.println("인자 4개를 입력해야 합니다. (예: 20 100 10 1)");
+            return;
+        }
+       
+        // ⭐ 이 부분에, [1], [2], [3] 대괄호가 꼭 있어야 합니다!
+        array_count = Integer.parseInt(args[0]);
+        max_value = Integer.parseInt(args[1]);
+        bin_size = Integer.parseInt(args[2]);
+        display_scale = Integer.parseInt(args[3]);
+        hist_size = max_value / bin_size;
+       
+        int[] arr = new int[array_count];
+        int[] hist = new int[hist_size]; // ⭐ hist_size 크기로 수정 완료!
+        
+        // 1. 랜덤 데이터 생성 및 출력
+        for (int i = 0; i < array_count; i++) {
+            arr[i] = (int) (Math.random() * max_value);
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();  
+		
+        // 2. 히스토그램 빈도수 계산
+        for (int i = 0; i < array_count; i++) {
+            int index = arr[i] / bin_size;
+            // 배열 범위를 벗어나지 않게 막아주는 안전장치
+            if (index >= hist_size) {
+                index = hist_size - 1;
+            }
+            hist[index]++;
+        }
+        
+        // 3. 빈도수 숫자 출력
+        for (int i = 0; i < hist_size; i++) {
+            System.out.print(hist[i] + " ");  
+        }
+        System.out.println();
+        
+        // 4. display_scale을 활용한 별(*) 표시 출력
+        System.out.println("\n--- 히스토그램 그래프 ---");
+        for (int i = 0; i < hist_size; i++) {
+            System.out.printf("%2d ~ %2d : ", i * bin_size, (i + 1) * bin_size - 1);
+            int starCount = hist[i] / display_scale;
+            for (int j = 0; j < starCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println(" (" + hist[i] + "개)");
+        }
+    }
+}
