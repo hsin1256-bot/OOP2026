@@ -52,7 +52,7 @@ public class Homework1 {
 ![](./image/Homework1.png)
 
 ```java
-public class HomeWork1 {
+public class HomeWork1_1 {
     public static void main(String[] args) {
         int i = 1; 
         int j = 1; 
@@ -73,22 +73,49 @@ public class HomeWork1 {
 ![](./image/homework1-1.png)
 
 ```java
-public class HelloWorld {
+public class Homework1_2 {
     public static void main(String[] args) {
-        int i;
-        int j = 0;
-        int k = 1;
+        double i = 1;
+        double j = 1;
+        double k;
         
- 
-        for(i = 0; i <= 21; i++) {
-            System.out.print(k + " "); 	  
-            list.add(k);
-            int temp = k;
-            k = j + k;
-            j = temp;
+        System.out.println("1번째: 1");
+        System.out.println("2번째: 1");
+        
+        
+        for (int count = 3; count <= 20; count++) {
+            k = i + j; // 다음 피보나치 수
+            
+            
+            double ratio = k / j; 
+            
+            System.out.printf("%.6f\n", ratio);
+            
+            
+            i = j;
+            j = k;
         }
-        System.out.println();
-
-        }
+    }
 }
-
+```
+![](./image/homework1-2.png)
+```java
+public class Homework1_3 {
+    public static void main(String[] args) {
+        
+        // i는 곱하는 수 (1부터 9까지 행 변경)
+        for (int i = 1; i <= 9; i++) {
+            
+            // j는 구구단의 단 (1단부터 9단까지 열 변경)
+            for (int j = 1; j <= 9; j++) {
+                // \t는 탭 공백으로, 줄을 깔끔하게 맞춰줍니다.
+                System.out.print(j + "*" + i + "=" + (j * i) + "\t");
+            }
+            
+            // 한 행(i)의 출력이 끝나면 줄바꿈
+            System.out.println();
+        }
+    }
+}
+```
+![](./image/homework1-3.png)
