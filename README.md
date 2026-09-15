@@ -140,9 +140,9 @@ public class Homework5 {
 }
 ```
 ![](./image/Homework5.png)
-### Homework6
+### Homework5-1
 ```java
-public class Homework1_3 {
+public class Homework5_1 {
     public static void main(String[] args) {
 
         int i;
@@ -160,5 +160,5 @@ public class Homework1_3 {
     }
 }
 ```
-![](./image/Homework6.png)
+![](./image/Homework5-1.png)
 
