@@ -118,3 +118,25 @@ public class Homework4 {
 }
 ```
 ![](./image/homework1-3.png)
+### Homework5
+```java
+public class Homework5 {
+    public static void main(String[] args) {
+
+        int i, j;
+        double radius = 0;
+        
+        for(i=1; i<=10000000; i++) {
+        	if (i % 4 == 1) {
+        		radius += 4*(1.0/i);
+        	}
+        	else if (i % 4 ==3) {
+        		radius -= 4*(1.0/i);
+        	}
+        }
+       
+        	System.out.printf("%.6f", radius);
+    }
+}
+```
+![](./image/homework5.png)
