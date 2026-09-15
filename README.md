@@ -52,7 +52,7 @@ public class Homework1 {
 ![](./image/Homework1.png)
 
 ```java
-public class HomeWork1_1 {
+public class HomeWork2 {
     public static void main(String[] args) {
         int i = 1; 
         int j = 1; 
@@ -73,7 +73,7 @@ public class HomeWork1_1 {
 ![](./image/homework1-1.png)
 
 ```java
-public class Homework1_2 {
+public class Homework3 {
     public static void main(String[] args) {
 
         double i = 1;
@@ -97,7 +97,7 @@ public class Homework1_2 {
 ```
 ![](./image/homework1-2.png)
 ```java
-public class Homework1_3 {
+public class Homework4 {
     public static void main(String[] args) {
         
         // i는 곱하는 수 (1부터 9까지 행 변경)
