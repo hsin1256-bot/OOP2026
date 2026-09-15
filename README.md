@@ -140,3 +140,24 @@ public class Homework5 {
 }
 ```
 ![](./image/Homework5.png)
+### Homework6
+```java
+public class Homework1_3 {
+    public static void main(String[] args) {
+
+        int i;
+        double pi = 0;
+        for(i=0; i<=1000000;i++) {
+        	if(i%2 == 0) {
+        		pi += (Math.pow(3,-i)/(2 * i + 1));
+        	}
+        	else {
+        		pi -= (Math.pow(3, -i)/(2 * i  + 1));
+        	}
+        }
+        pi = pi * Math.sqrt(12);
+        System.out.printf("%.6f", pi);
+    }
+}
+![](./image/Homework6.png)
+
