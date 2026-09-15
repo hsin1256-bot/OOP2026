@@ -50,7 +50,7 @@ public class Homework1 {
 ```
 
 ![](./image/Homework1.png)
-
+### Homework2
 ```java
 public class HomeWork2 {
     public static void main(String[] args) {
@@ -73,6 +73,7 @@ public class HomeWork2 {
 ![](./image/homework1-1.png)
 
 ```java
+### Homework3
 public class Homework3 {
     public static void main(String[] args) {
 
@@ -96,6 +97,7 @@ public class Homework3 {
 
 ```
 ![](./image/homework1-2.png)
+### Homework4
 ```java
 public class Homework4 {
     public static void main(String[] args) {
