@@ -75,28 +75,25 @@ public class HomeWork1_1 {
 ```java
 public class Homework1_2 {
     public static void main(String[] args) {
+
         double i = 1;
         double j = 1;
         double k;
         
-        System.out.println("1번째: 1");
-        System.out.println("2번째: 1");
-        
-        
         for (int count = 3; count <= 20; count++) {
-            k = i + j; // 다음 피보나치 수
-            
-            
+            k = i + j; 
+           
             double ratio = k / j; 
             
             System.out.printf("%.6f\n", ratio);
             
-            
+          
             i = j;
             j = k;
         }
     }
 }
+
 ```
 ![](./image/homework1-2.png)
 ```java
