@@ -192,7 +192,7 @@ public class Homework6 {
 ![](./image/homework6.png)
 ### Homework7
 ```java
-public class Homework1_3 {
+public class Homework7 {
     public static void main(String[] args) {
 
         int data[] = new int[20];
@@ -229,3 +229,39 @@ public class Homework1_3 {
 }
 ```
 ![](./image/homework7.png)
+### Homework8
+```java
+public class Homework8{
+    public static void main(String[] args) {
+        
+        int[][] score = new int[30][4];
+
+        
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 4; j++) {
+                score[i][j] = (int) (Math.random() * 101); 
+            }
+        }
+
+        System.out.println("번호\t국어\t영어\t수학\t과학\t총점\t평균");
+        System.out.println("-----------------------------------------------------");
+
+       
+        for (int i = 0; i < 30; i++) {
+            int sum = 0;
+
+            System.out.print((i + 1) + "\t");
+            
+            for (int j = 0; j < 4; j++) {
+                System.out.print(score[i][j] + "\t");
+                sum += score[i][j];
+            }
+            
+            double avg = sum / 4.0;
+            
+            System.out.printf("%d\t%.1f\n", sum, avg);
+        }
+    }
+}
+```
+![](./image/homework8.png)
