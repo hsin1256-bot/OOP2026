@@ -190,3 +190,42 @@ public class Homework6 {
 }
 ```
 ![](./image/homework6.png)
+### Homework7
+```java
+public class Homework1_3 {
+    public static void main(String[] args) {
+
+        int data[] = new int[20];
+        for (int i = 0; i < 20; i++) {
+            data[i] = (int) (Math.random() * 100);
+        }
+
+        System.out.println("=== 정렬 전 ===");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println("\n");
+
+        for (int i = 0; i < data.length - 1; i++) {
+            int minIndex = i; 
+            
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < data[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            
+            int temp = data[i];
+            data[i] = data[minIndex];
+            data[minIndex] = temp;
+        }
+
+        System.out.println("=== 정렬 후 ===");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+    }
+}
+```
+![](./image/homework7.png)
