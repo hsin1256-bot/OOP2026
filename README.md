@@ -165,22 +165,21 @@ public class Homework5_1 {
 ```java
 public class Homework6 {
     public static void main(String[] args) {
-        int n = 7; // 구하고자 하는 행의 개수 (0제곱부터 6제곱까지)
+
         int[][] binomial = new int[n][];
 
-        // 1. 이항계수 계산 (파스칼의 삼각형 생성)
         for (int i = 0; i < n; i++) {
             binomial[i] = new int[i + 1];
-            binomial[i][0] = 1; // 각 행의 첫 번째 값은 항상 1
-            binomial[i][i] = 1; // 각 행의 마지막 값은 항상 1
+            binomial[i][0] = 1; 
+            binomial[i][i] = 1; 
 
             for (int j = 1; j < i; j++) {
-                // 이전 행의 두 값을 더해서 현재 위치의 계수를 구함
+           
                 binomial[i][j] = binomial[i - 1][j - 1] + binomial[i - 1][j];
             }
         }
 
-        // 2. 결과 출력
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= i; j++) {
                 System.out.print(binomial[i][j] + " ");
@@ -190,4 +189,4 @@ public class Homework6 {
     }
 }
 ```
-![](./image.homework6.png)
+![](./image/homework6.png)
