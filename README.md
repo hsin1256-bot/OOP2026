@@ -265,3 +265,43 @@ public class Homework8{
 }
 ```
 ![](./image/homework8.png)
+
+### Homework10
+```java
+public class Main {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int array_count, max_value, bin_size, display_scale, hist_size;
+		if(args.length !=4)
+			return;
+		array_count = Integer.parseInt(args[0]);
+		max_value = Integer.parseInt(args[1]);
+		bin_size = Integer.parseInt(args[2]);
+		display_scale = Integer.parseInt(args[3]);
+		hist_size = (max_value + bin_size - 1) / bin_size;   // 변경: 올림 계산
+
+		int[] arr = new int[array_count];
+		int[] hist = new int[hist_size];
+		for (int i=0; i<array_count; i++) {
+			arr[i] = (int) (Math.random()*max_value);
+		}
+
+		for (int i=0; i<array_count; i++) {
+			hist[arr[i]/bin_size]++;
+		}
+
+		// 변경: 결과 출력 형식
+		System.out.println("int data[" + array_count + "] 0~" + max_value);
+		for (int i=0; i<hist_size; i++) {
+			int low = i*bin_size;
+			int high = Math.min(low + bin_size, max_value) - 1;
+			System.out.print(low + "~" + high + "\t\t");
+			for (int j=0; j<hist[i]/display_scale; j++) {
+				System.out.print("#");
+			}
+			System.out.println();
+		}
+	}
+}
+```
+![](./image/homework10.png)
