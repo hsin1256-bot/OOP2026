@@ -338,3 +338,60 @@ public class Homework11 {
 }
 ```
 ![](./image/homework11.png)
+
+### Homework13
+```java
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  
+
+        while (true) {
+            System.out.print("계산식 입력 (예: 3 + 4) 또는 'exit' 입력: ");
+            if (!sc.hasNextLine()) break;
+            String input = sc.nextLine().trim();
+
+            if (input.equalsIgnoreCase("exit")) {
+                System.out.println("종료합니다.");
+                break;
+            }
+
+            String[] tokens = input.split("\\s+");   
+            if (tokens.length != 3) {
+                System.out.println("형식: 숫자 연산자 숫자 (예: 3 + 4)");
+                continue;
+            }
+
+            try {
+                int a = Integer.parseInt(tokens[0]);
+                String op = tokens[1];
+                int b = Integer.parseInt(tokens[2]);
+
+                if (op.equals("+")) {
+                    System.out.println(a + b);
+                } else if (op.equals("-")) {
+                    System.out.println(a - b);
+                } else if (op.equals("*")) {
+                    System.out.println(a * b);
+                } else if (op.equals("/")) {
+                    if (b == 0) System.out.println("0으로 나눌 수 없습니다.");
+                    else System.out.println(a / b);
+                } else {
+                    System.out.println("지원하지 않는 연산자입니다: " + op);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("숫자가 올바르지 않습니다.");
+            }
+        }
+        sc.close();
+    }
+}
+```
+![](./image/homework13.png)
+
+### Homework14
+```java
+
+```
+![](./image/homework14.png)
