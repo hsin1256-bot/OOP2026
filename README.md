@@ -392,6 +392,96 @@ public class Calculator {
 
 ### Homework14
 ```java
+package numbers;
+public class Numbers {
+	int num[];
+	Numbers(int num[]) {
+		this.num = num;
+	}
+	double getTotal() {
+		double sum=0;
+		for(int i=0; i<num.length; i++) sum+=num[i];
+		return sum;
+	}
+	double getArithmaticMean() {
+		return getTotal()/num.length;
+	}
+	// 조화평균 = n / (1/x1 + 1/x2 + ... + 1/xn)
+	double getHarmonicMean() {
+		double sum=0;
+		for(int i=0; i<num.length; i++) sum+=1.0/num[i];
+		return num.length/sum;
+	}
+	// 기하평균 = (x1 * x2 * ... * xn)^(1/n)
+	// 곱이 너무 커지는 것(오버플로)을 막기 위해 로그로 계산: exp( (ln x1 + ... + ln xn) / n )
+	double getGeometricMean() {
+		double logSum=0;
+		for(int i=0; i<num.length; i++) logSum+=Math.log(num[i]);
+		return Math.exp(logSum/num.length);
+	}
+	// 중앙값: 정렬 후 가운데 값 (개수가 짝수이면 가운데 두 값의 평균, 정수로 반환하므로 소수점은 버림)
+	int getMedian() {
+		sorting();
+		int n=num.length;
+		if(n%2==1) return num[n/2];
+		return (num[n/2-1]+num[n/2])/2;
+	}
+	// 선택 정렬 (오름차순, 원래 배열을 직접 정렬)
+	void sorting() {
+		for(int i=0; i<num.length-1; i++) {
+			int min=i;
+			for(int j=i+1; j<num.length; j++)
+				if(num[j]<num[min]) min=j;
+			int tmp=num[i];
+			num[i]=num[min];
+			num[min]=tmp;
+		}
+	}
+	// 도수분포표: start 이상 end 미만 범위를 binSize 간격으로 나누고, # 하나가 scale개를 뜻한다 (남는 개수도 # 하나로 올림)
+	void drawHistogram(int start, int end, int binSize, int scale) {
+		if(binSize<=0 || scale<=0 || end<=start) {
+			System.out.println("start < end 이고, binSize와 scale은 1 이상이어야 합니다.");
+			return;
+		}
+		int histSize=(end-start+binSize-1)/binSize;
+		int hist[]=new int[histSize];
+		for(int i=0; i<num.length; i++) {
+			if(num[i]>=start && num[i]<end)
+				hist[(num[i]-start)/binSize]++;
+		}
+		System.out.println("int data["+num.length+"] "+start+"~"+end);
+		for(int i=0; i<histSize; i++) {
+			int low=start+i*binSize;
+			int high=Math.min(low+binSize, end)-1;
+			System.out.print(low+"~"+high+"\t\t");
+			for(int j=0; j<(hist[i]+scale-1)/scale; j++) System.out.print("#");
+			System.out.println();
+		}
+	}
+	void display() {
+		System.out.printf("%3d :", num.length);	
+		for(int i=0; i<num.length; i++) 
+			System.out.printf("%3d ", num[i]);
+		System.out.println();
+	}
+}
+
+package numbers;
+public class NumbersTest {
+	public static void main(String[] args) {
+		int size=100;
+		int data[]=new int[size];
+		for(int i=0; i<size; i++) 
+			data[i]=(int)(Math.random()*100);
+		Numbers obj = new Numbers(data);
+		obj.display();
+		System.out.printf("Arithmetic Mean : %5.2f\n", obj.getArithmaticMean());
+		System.out.printf("Geometric Mean : %5.2f\n", obj.getGeometricMean());	
+		System.out.printf("Harmonic Mean : %5.2f\n", obj.getHarmonicMean());
+		System.out.printf("Median : %d\n", obj.getMedian());
+		obj.drawHistogram(0,100,10,10);	// start, end, binSize, scale
+	}
+}
 
 ```
 ![](./image/homework14.png)
